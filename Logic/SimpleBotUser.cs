@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace SimpleBot
 {
@@ -9,7 +11,19 @@ namespace SimpleBot
     {
         public static string Reply(Message message)
         {
-            return $"{message.User} disse '{message.Text}'";
+            var msg = $"{message.User} disse '{message.Text}'";
+
+            var client = new MongoClient("mongodb://localhost:27017");
+            var db = client.GetDatabase("db01");
+            var col = db.GetCollection<BsonDocument>("tabela01");
+            var doc = new BsonDocument()
+            {
+                { "id", message.Id },
+                { "texto", msg },
+                { "app", "SimpleBot"}
+            };
+            col.InsertOne(doc);
+            return msg;
         }
 
         public static UserProfile GetProfile(string id)

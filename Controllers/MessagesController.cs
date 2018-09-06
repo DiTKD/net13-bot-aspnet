@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Microsoft.Bot.Connector;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace SimpleBot
 {
@@ -18,6 +20,8 @@ namespace SimpleBot
             {
                 await HandleActivityAsync(activity);
             }
+
+
 
             // HTTP 202
             return new HttpResponseMessage(HttpStatusCode.Accepted);
