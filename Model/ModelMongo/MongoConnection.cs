@@ -6,9 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace SimpleBot.Connection
+namespace SimpleBot
 {
-    public class mongoDB
+    public class MongoConnection
     {
 
         private static string mongoString = "mongodb://localhost";

@@ -9,6 +9,8 @@ namespace SimpleBot.Repository
     public interface IUserProfileRepository 
     {
         UserProfile GetProfile(string id);
-        void SetProfile(string id, UserProfile profile);
+        UserProfile SetProfile(string id, UserProfile profile);
+
+        bool InsertMessage(Message message);
     }
 }

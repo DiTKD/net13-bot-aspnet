@@ -1,0 +1,11 @@
+1)Qual a porta padrão do MongoDB?
+R: 27017
+
+2)Cite uma diferença do BSON em relação ao JSON.
+R:Eficiência.
+Codificação de dados para BSON e decodificação de BSON podem ser realizadas muito rapidamente na maioria dos linguagens devido ao uso de tipos de dados C.
+
+
+3)Compare o comando UPDATE com REPLACE (MongoDB)
+R: Update altera um ou mais registro dentro de um documento.
+   Replace substitui o documento, podendo crialo caso não exista.
